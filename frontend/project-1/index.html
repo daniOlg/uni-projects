@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ciisa Workshop</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+<script>
+    const options = {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer get'
+        }
+    }
+
+    function createCard(title, text) {
+        const cardContainer = document.createElement('div');
+        cardContainer.innerHTML = `
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${text}</p>
+            </div>
+        </div>`;
+        return cardContainer;
+    }
+
+    async function getServices() {
+        const res = await fetch('http://localhost/v1/services', options);
+        const {data} = await res.json();
+        return data;
+    }
+
+    async function renderServices() {
+        const services = await getServices();
+        const servicesContainer = document.getElementById('servicios');
+
+        services.forEach(service => {
+            const title = service.titulo.esp;
+            const text = service.texto.esp;
+            servicesContainer.appendChild(createCard(title, text));
+        });
+    }
+
+    async function getAboutUs() {
+        const res = await fetch('http://localhost/v1/about-us', options);
+        const {data} = await res.json();
+        return data;
+    }
+
+    async function renderAboutUs() {
+        const aboutUs = await getAboutUs();
+        console.log(aboutUs)
+        const servicesContainer = document.getElementById('nosotros');
+
+        const mision = aboutUs.mision;
+        const misionTitle = mision.titulo.esp;
+        const misionText = mision.contenido.esp;
+
+        const vision = aboutUs.vision;
+        const visionTitle = vision.titulo.esp;
+        const visionText = vision.contenido.esp;
+
+        servicesContainer.appendChild(createCard(misionTitle, misionText));
+        servicesContainer.appendChild(createCard(visionTitle, visionText));
+    }
+
+    renderServices();
+    renderAboutUs()
+
+</script>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CIISA WORKSHOP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#servicios">Nuestros servicios</a>
+                    <a class="nav-link" href="#contactenos">Contactenos</a>
+                    <a class="nav-link" href="#contactenos">Nosotros</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+<!--        Header y Menú Principal:
+Incluirá un encabezado con el nombre de la empresa y un menú principal que permita
+acceder a las diferentes secciones de la página, como Home, Nuestros Servicios, Contáctenos y
+Nosotros.-->
+        <section class="py-5" id="home">
+            <h1 class="text-center">Bienvenidos a CIISA WORKSHOP</h1>
+            <p class="text-center">Somos una empresa dedicada a la creación de software a la medida, con más de 12 años de experiencia en el mercado.</p>
+        </section>
+        <section>
+            <h2 class="text-center">Nuestros servicios:</h2>
+            <br/>
+            <div class="row row-cols-3 row-gap-3" id="servicios">
+            </div>
+        </section>
+        <br/><hr/><br/>
+        <section id="contactenos">
+            <h2 class="text-center mb-4">Contactenos:</h2>
+            <div class="row text-center">
+                <div class="col-4">
+                    <h4>Dirección física:</h4>
+                    <span>Av. Providencia 1234, Oficina 601, Providencia, Santiago, Chile</span>
+                </div>
+                <div class="col-4">
+                    <h4>Contacto telefónico:</h4>
+                    <span>Teléfono: +56 2 1234 5678</span>
+                </div>
+                <div class="col-4">
+                    <h4>Página web y correo:</h4>
+                    <span>www.coningenio.cl</span>
+                    <span>info@coningenio.cl</span>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <h4>Envíanos un mensaje:</h4>
+            <form>
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="messageInput" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="messageInput" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+        <br/><hr/><br/>
+        <section>
+            <h2 class="text-center">Nosotros:</h2>
+            <br/>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-gap-3" id="nosotros">
+            </div>
+        </section>
+        <br><br>
+    </main>
+</header>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
