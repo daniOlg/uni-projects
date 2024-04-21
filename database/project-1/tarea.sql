@@ -68,16 +68,16 @@ BEGIN
 
     n_sueldo_final := n_sueldo + n_bono;
 
--- Imprimir resultados
-    DBMS_OUTPUT.PUT_LINE('Nombre: ' || v_nombre || ' ' || v_apellido);
-    DBMS_OUTPUT.PUT_LINE('RUN: ' || n_run || '-' || v_dvrun);
-    DBMS_OUTPUT.PUT_LINE('Sueldo Actual: ' || TO_CHAR(n_sueldo, 'L999G999G990D00'));
-    DBMS_OUTPUT.PUT_LINE('Bono extra (15%): ' || TO_CHAR(n_bono, 'L999G999G990D00'));
-    DBMS_OUTPUT.PUT_LINE('Sueldo final con Bono: ' || TO_CHAR(n_sueldo_final, 'L999G999G990D00'));
+-- Log
+DBMS_OUTPUT.PUT_LINE('Nombre: ' || v_nombre || ' ' || v_apellido);
+DBMS_OUTPUT.PUT_LINE('RUN: ' || n_run || '-' || v_dvrun);
+DBMS_OUTPUT.PUT_LINE('Sueldo Actual: ' || TO_CHAR(n_sueldo, 'L999G999G990D00'));
+DBMS_OUTPUT.PUT_LINE('Bono extra (15%): ' || TO_CHAR(n_bono, 'L999G999G990D00'));
+DBMS_OUTPUT.PUT_LINE('Sueldo final con Bono: ' || TO_CHAR(n_sueldo_final, 'L999G999G990D00'));
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('No se encontró un empleado con el RUN proporcionado.');
+        DBMS_OUTPUT.PUT_LINE('No se encontro el empreado.');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error al calcular el bono: ' || SQLERRM);
 END;
