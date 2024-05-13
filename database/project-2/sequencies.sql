@@ -1,5 +1,12 @@
 -- USANDO PLSQL/ORACLE DATABASE
 
+-- limpiar procedimientos
+DROP PROCEDURE verificar_paciente;
+DROP PROCEDURE registrar_atencion;
+DROP PROCEDURE consultar_atenciones;
+DROP PROCEDURE actualizar_sueldo_base_medico;
+DROP PROCEDURE calcular_edad_paciente;
+
 -- procedimientos
 -- verificar si paciente existe con rut
 CREATE OR REPLACE PROCEDURE verificar_paciente(
@@ -122,10 +129,3 @@ BEGIN
     calcular_edad_paciente(7000164, '0', v_edad);
     DBMS_OUTPUT.PUT_LINE('Edad: ' || v_edad);
 END;
-
--- limpiar procedimientos
-DROP PROCEDURE verificar_paciente;
-DROP PROCEDURE registrar_atencion;
-DROP PROCEDURE consultar_atenciones;
-DROP PROCEDURE actualizar_sueldo_base_medico;
-DROP PROCEDURE calcular_edad_paciente;
