@@ -123,6 +123,7 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Edad: ' || v_edad);
 END;
 
+-- limpiar procedimientos
 DROP PROCEDURE verificar_paciente;
 DROP PROCEDURE registrar_atencion;
 DROP PROCEDURE consultar_atenciones;
