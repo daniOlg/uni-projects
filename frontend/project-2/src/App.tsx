@@ -22,6 +22,9 @@ function App() {
           <Tab.Pane eventKey="faq">
             <h1>FAQ</h1>
           </Tab.Pane>
+          <Tab.Pane eventKey="contact">
+            <h1>Contact</h1>
+          </Tab.Pane>
         </Tab.Content>
       </Tab.Container>
     </main>)

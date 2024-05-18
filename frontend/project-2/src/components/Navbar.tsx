@@ -29,6 +29,7 @@ function AppNavbar({activeKey, setActiveKey}: AppNavbarProps) {
             <Nav.Link onClick={handleChangeTab} active={activeKey === 'history'} accessKey='history'>Historia</Nav.Link>
             <Nav.Link onClick={handleChangeTab} active={activeKey === 'team'} accessKey='team'>Equipo</Nav.Link>
             <Nav.Link onClick={handleChangeTab} active={activeKey === 'faq'} accessKey='faq'>Preguntas Frecuentes</Nav.Link>
+            <Nav.Link onClick={handleChangeTab} active={activeKey === 'contact'} accessKey='contact'>Contacto</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
