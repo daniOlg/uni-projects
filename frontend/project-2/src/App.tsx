@@ -1,6 +1,7 @@
 import Tab from 'react-bootstrap/Tab';
 import AppNavbar from "./components/Navbar.tsx";
 import {useState} from "react";
+import ContactPage from "./components/ContactPage.tsx";
 
 function App() {
   const [activeKey, setActiveKey] = useState('home');
@@ -23,7 +24,7 @@ function App() {
             <h1>FAQ</h1>
           </Tab.Pane>
           <Tab.Pane eventKey="contact">
-            <h1>Contact</h1>
+            <ContactPage/>
           </Tab.Pane>
         </Tab.Content>
       </Tab.Container>
