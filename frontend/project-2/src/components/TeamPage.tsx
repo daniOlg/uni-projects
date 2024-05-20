@@ -3,41 +3,6 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 
 function TeamPage() {
-  // Maqueta de la página de equipo
-  // titulo: Compartimos una visión clara del objetivo, fomentamos un clima de confianza, colaboración y apoyo mutuo entre los integrantes del equipo.
-  //
-  // subtitulo: Liderazgo
-  // parrafo: Mizraim Abello es el fundador de Energy and Water SpA, es un líder colaborativo que se desempeña en el ámbito laboral, específicamente en el sector de la climatización y electricidad. Practica un liderazgo democrático; es decir, que involucra al equipo de trabajo en la toma de decisiones y valora sus opiniones y sugerencias. Sus principales habilidades como líder son la resolución de problemas, la comunicación efectiva, el pensamiento crítico, la capacidad de coordinación y gestión. Algunos de los logros más destacados son haber participado en la acreditación de los centros de salud de la municipalidad de San Joaquín, reparación del equipo de climatización para el museo de la Universidad de los Andes y haber realizado reparaciones y cambios de grupos electrógenos que son críticos para el funcionamiento de los edificios. Uno de los desafíos que enfrentó como líder fue adaptarse a las nuevas normativas sanitarias por la pandemia y garantizar la seguridad del equipo y los clientes. Lo logró implementando protocolos de prevención y capacitando al personal. Su objetivo como líder es darle continuidad operacional a los clientes y mejorar constantemente los procesos de mantenimiento y calidad.
-  //
-  // imagen: Imagen de Mantenimiento para edificios
-  // sub de la imagen de mantenimiento: Mantenimiento para edificios.
-  //
-  // subitutlo: Este es nuestro equipo
-  // parrafo: En Energy And Water SpA nos dedicamos a crear ambientes gratos y confortables a través del mantenimiento para calderas, aire acondicionado, salas de bombas, grupos electrógenos y electricidad, entre otros.
-  //
-  // imagen: Imagen de seccion equipo de trabajo
-  // El servicio nos mueve
-  //
-  // aqui va un grid con las imagenes de los integrantes del equipo
-  // imagen: imagen de Mizraim Abello Avello
-  // integrante equipo: Mizraim Abello Avello
-  //
-  // imagen: imagen de Marcelo Fuentes Orellana
-  // integrante equipo: Marcelo Fuentes Orellana
-  //
-  // imagen: imagen de Juan Pérez
-  // integrante equipo (ejemplo maquetado):  [Nombre]
-  //
-  // imagen: imagen de Juan Pérez
-  // integrante equipo (ejemplo maquetado):  [Nombre]
-  //
-  // imagen: imagen de Juan Pérez
-  // integrante equipo (ejemplo maquetado):  [Nombre]
-  //
-  // subtitulo: Únete al equipo
-  // parrafo: Describe brevemente qué cualidades deben tener tus compañeros.
-  //
-  // boton primario: Enviar solicitud
   return (
     <Container className="my-12 space-y-8">
       <div className="row">
