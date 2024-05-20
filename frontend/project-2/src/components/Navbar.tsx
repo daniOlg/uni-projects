@@ -26,7 +26,7 @@ function AppNavbar({activeKey, setActiveKey}: AppNavbarProps) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link onClick={handleChangeTab} active={activeKey === 'home'} accessKey='home'>Inicio</Nav.Link>
-            <Nav.Link onClick={handleChangeTab} active={activeKey === 'history'} accessKey='history'>Historia</Nav.Link>
+            <Nav.Link onClick={handleChangeTab} active={activeKey === 'story'} accessKey='story'>Historia</Nav.Link>
             <Nav.Link onClick={handleChangeTab} active={activeKey === 'team'} accessKey='team'>Equipo</Nav.Link>
             <Nav.Link onClick={handleChangeTab} active={activeKey === 'faq'} accessKey='faq'>Preguntas Frecuentes</Nav.Link>
             <Nav.Link onClick={handleChangeTab} active={activeKey === 'contact'} accessKey='contact'>Contacto</Nav.Link>

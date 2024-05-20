@@ -4,6 +4,7 @@ import {useState} from "react";
 import ContactPage from "./components/ContactPage.tsx";
 import FAQPage from "./components/FAQPage.tsx";
 import TeamPage from "./components/TeamPage.tsx";
+import StoryPage from "./components/StoryPage.tsx";
 
 function App() {
   const [activeKey, setActiveKey] = useState('home');
@@ -16,8 +17,8 @@ function App() {
           <Tab.Pane eventKey="home">
             <h1>Home</h1>
           </Tab.Pane>
-          <Tab.Pane eventKey="history">
-            <h1>History</h1>
+          <Tab.Pane eventKey="story">
+            <StoryPage/>
           </Tab.Pane>
           <Tab.Pane eventKey="team">
             <TeamPage/>
