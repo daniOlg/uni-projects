@@ -5,6 +5,7 @@ import ContactPage from "./components/ContactPage.tsx";
 import FAQPage from "./components/FAQPage.tsx";
 import TeamPage from "./components/TeamPage.tsx";
 import StoryPage from "./components/StoryPage.tsx";
+import HomePage from './components/HomePage.tsx';
 
 function App() {
   const [activeKey, setActiveKey] = useState('home');
@@ -15,7 +16,7 @@ function App() {
         <AppNavbar activeKey={activeKey} setActiveKey={setActiveKey}/>
         <Tab.Content>
           <Tab.Pane eventKey="home">
-            <h1>Home</h1>
+            <HomePage/>
           </Tab.Pane>
           <Tab.Pane eventKey="story">
             <StoryPage/>
