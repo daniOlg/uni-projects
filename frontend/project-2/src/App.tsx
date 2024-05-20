@@ -3,6 +3,7 @@ import AppNavbar from "./components/Navbar.tsx";
 import {useState} from "react";
 import ContactPage from "./components/ContactPage.tsx";
 import FAQPage from "./components/FAQPage.tsx";
+import TeamPage from "./components/TeamPage.tsx";
 
 function App() {
   const [activeKey, setActiveKey] = useState('home');
@@ -19,7 +20,7 @@ function App() {
             <h1>History</h1>
           </Tab.Pane>
           <Tab.Pane eventKey="team">
-            <h1>Team</h1>
+            <TeamPage/>
           </Tab.Pane>
           <Tab.Pane eventKey="faq">
             <FAQPage/>
