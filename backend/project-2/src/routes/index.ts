@@ -1,6 +1,7 @@
 import {Router} from 'express';
 import {getMaintenanceInfo} from '../controllers/maintenance-info';
 import {getServiceCategory} from "../controllers/service-category";
+import {getContactInfo} from "../controllers/contact-info";
 import {root} from "../controllers/root";
 
 const router = Router();
@@ -8,9 +9,9 @@ const router = Router();
 // Routes
 router.get('/maintenance-info', getMaintenanceInfo);
 router.get('/service-category', getServiceCategory);
+router.get('/contact-info', getContactInfo);
 
 // TODO: Implement the following routes
-// router.get('/contact-info', getMaintenanceInfo);
 // router.get('/history', getMaintenanceInfo);
 // router.get('/team', getMaintenanceInfo);
 // router.get('/faq', getMaintenanceInfo);
