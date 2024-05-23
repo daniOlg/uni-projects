@@ -4,6 +4,7 @@ import {getServiceCategory} from "../controllers/service-category";
 import {getContactInfo} from "../controllers/contact-info";
 import {getImage} from "../controllers/image";
 import {getHistory} from "../controllers/history";
+import {getHistoryImage} from "../controllers/history-image";
 import {root} from "../controllers/root";
 
 const router = Router();
@@ -14,6 +15,7 @@ router.get('/service-category', getServiceCategory);
 router.get('/contact-info', getContactInfo);
 router.get('/get-image', getImage);
 router.get('/history', getHistory);
+router.get('/history-image', getHistoryImage);
 
 // TODO: Implement the following routes
 // router.get('/team', getMaintenanceInfo);
