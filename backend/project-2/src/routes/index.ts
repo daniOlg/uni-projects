@@ -3,6 +3,7 @@ import {getMaintenanceInfo} from '../controllers/maintenance-info';
 import {getServiceCategory} from "../controllers/service-category";
 import {getContactInfo} from "../controllers/contact-info";
 import {getImage} from "../controllers/image";
+import {getHistory} from "../controllers/history";
 import {root} from "../controllers/root";
 
 const router = Router();
@@ -12,9 +13,9 @@ router.get('/maintenance-info', getMaintenanceInfo);
 router.get('/service-category', getServiceCategory);
 router.get('/contact-info', getContactInfo);
 router.get('/get-image', getImage);
+router.get('/history', getHistory);
 
 // TODO: Implement the following routes
-// router.get('/history', getMaintenanceInfo);
 // router.get('/team', getMaintenanceInfo);
 // router.get('/faq', getMaintenanceInfo);
 
