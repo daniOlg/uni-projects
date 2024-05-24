@@ -1,3 +1,5 @@
+-- EXTRAIDO DESDE RECURSOS CIISA
+
 -- CREATE
 INSERT INTO mantenimiento_info (id, nombre, texto, activo) VALUES (0, 'NOMBRE', 'TEXTO', true);
 INSERT INTO categoria_servicio (id, nombre, imagen, texto, activo) VALUES (0, 'NOMBRE', 'URL IMAGEN', 'TEXTO', true);
