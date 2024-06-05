@@ -13,8 +13,39 @@ const router = Router();
  * @openapi
  * /maintenance-info:
  *   get:
- *     summary: Retrieve a list of maintanance types
- *     description: Retrieve a list of maintanance types from the database. Can be used to populate a list of maintanance types when prototyping or testing an API.
+ *     summary: Get all maintanance types
+ *     description: Get all maintanance types from the database. Can be used when getting all maintanance types from the database.
+ *     responses:
+ *       200:
+ *         description: A list of all maintanance types.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: number
+ *                   name:
+ *                     type: string
+ *                   text:
+ *                     type: string
+ *                   active:
+ *                     type: boolean
+ *                 example:
+ *                   - id: 1
+ *                     name: "Mantenimiento"
+ *                     text: "Conjunto de operaciones y cuidados necesarios para que tus instalaciones continúen funcionando correctamente."
+ *                     active: true
+ *                   - id: 2
+ *                     name: "Mantenimiento Preventivo"
+ *                     text: "Ayuda a prolongar la vida útil de tus activos y aumenta la productividad, a través de una revisión."
+ *                     active: true
+ *                   - id: 3
+ *                     name: "Mantenimiento Correctivo"
+ *                     text: "Corrige problemas o daños en las instalaciones o equipos."
+ *                     active: true
  */
 router.get('/maintenance-info', getMaintenanceInfo);
 
@@ -41,6 +72,18 @@ router.get('/maintenance-info', getMaintenanceInfo);
  *             name: "Mantenimiento de prueba"
  *             text: "Este es un mantenimiento de prueba"
  *             active: true
+ *     responses:
+ *        200:
+ *          description: Data inserted
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *              example:
+ *                message: Data inserted
  */
 router.post('/maintenance-info', insertMaintenanceInfo);
 
@@ -70,6 +113,18 @@ router.post('/maintenance-info', insertMaintenanceInfo);
  *             name: "Mantenimiento de prueba"
  *             text: "Este es un mantenimiento de prueba"
  *             active: true
+ *     responses:
+ *        200:
+ *          description: Data updated
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *              example:
+ *                message: Data updated
  */
 router.put('/maintenance-info', updateMaintenanceInfo);
 
@@ -90,6 +145,18 @@ router.put('/maintenance-info', updateMaintenanceInfo);
  *                 type: number
  *           example:
  *             id: 1
+ *     responses:
+ *        200:
+ *          description: Data activated
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *              example:
+ *                message: Data activated
  */
 router.patch('/maintenance-info', activateMaintenanceInfo);
 
@@ -110,6 +177,18 @@ router.patch('/maintenance-info', activateMaintenanceInfo);
  *                 type: number
  *           example:
  *             id: 1
+ *     responses:
+ *        200:
+ *          description: Data deactivated
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  message:
+ *                    type: string
+ *              example:
+ *                message: Data deactivated
  */
 router.delete('/maintenance-info', deactivateMaintenanceInfo);
 
