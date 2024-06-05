@@ -23,7 +23,8 @@ router.use(historyImage);
 // router.get('/faq', getMaintenanceInfo);
 
 // Get all routes in the root of the API
-const routes: string[] = router.stack.map(r => r.handle.stack.map((r: any) => r.route.path)).flat();
+const _routes = router.stack.map(r => r.handle.stack.map((r: any) => r.route)).flat();
+const routes = _routes.filter((r: any) => Object.keys(r.methods).includes('get')).map((r: any) => r.path);
 router.get('/', (req, res) => root(req, res, routes));
 
 export default router;
